@@ -7,23 +7,16 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export enum AcademicNewTable {
-  SEMESTER = 'SEMESTER',
-  TERM = 'TERM',
-  TRIMESTER = 'TRIMESTER',
-  YEAR = 'YEAR',
-}
-
-@Entity('new_table')
-export class NewTable {
+@Entity('users')
+export class Users {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'name', type: 'text' })
-  name: string;
+  @Column({ name: 'firstName', type: 'text' })
+  firstName: string;
 
-  @Column({ name: 'academic_new_table', nullable: true, type: 'text' })
-  academicNewTable: AcademicNewTable;
+  @Column({ name: 'lastName', type: 'text' })
+  lastName: string;
 
   /* "created_at" - When the period type was created */
   @CreateDateColumn({ name: 'created', type: 'timestamptz' })

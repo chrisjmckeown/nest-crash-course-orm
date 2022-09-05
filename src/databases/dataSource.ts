@@ -16,7 +16,7 @@ export const dataSourceOptions: DataSourceOptions = {
   password: configService.get('DATABASE_PASSWORD'),
   database: configService.get('DATABASE_NAME'),
   entities: [...ENTITIES], //  entities: ['dist/entity/**/*.ts'], // <-- E2E tests don't work this configuration //
-  migrations: ['dist/src/databases/migrations/*.js'],
+  migrations: ['dist/databases/migrations/*.js'],
   synchronize: false,
 };
 
